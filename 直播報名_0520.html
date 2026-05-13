@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-TW"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>直播報名｜質穎形象顏究室®</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{background:#F5EFE9;font-family:'Noto Sans TC',Georgia,sans-serif;padding:2rem 1rem}.fw-wrap{max-width:680px;margin:0 auto}
+
+  .fw-header{background:#E8784A;border-radius:14px;padding:2.4rem 2rem 2rem;margin-bottom:1.5rem;position:relative;overflow:hidden}
+  .fw-header::before{content:'FLORAL';position:absolute;right:-10px;top:50%;transform:translateY(-50%);font-family:Georgia,serif;font-size:90px;color:rgba(255,255,255,0.09);letter-spacing:8px;pointer-events:none;white-space:nowrap}
+  .fw-eyebrow{font-size:10px;letter-spacing:4px;color:rgba(255,255,255,0.75);margin-bottom:0.85rem}
+  .fw-title{font-family:Georgia,serif;font-size:24px;color:#fff;font-weight:400;line-height:1.45;margin-bottom:0.7rem}
+  .fw-bar{height:1.5px;background:rgba(255,255,255,0.35);margin:1rem 0}
+  .fw-sub{font-family:Georgia,serif;font-size:13px;color:rgba(255,255,255,0.85);font-style:italic;line-height:1.65}
+  .fw-meta{display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:1.1rem}
+  .fw-chip{background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.35);border-radius:20px;padding:4px 14px;font-size:11px;color:#fff}
+  .fw-chip-date{background:rgba(255,255,255,0.3);border:1px solid rgba(255,255,255,0.5);border-radius:20px;padding:4px 14px;font-size:11px;color:#fff;font-weight:500}
+.fw-section{background:#FAF6F3;border-radius:12px;border:1px solid #e0d6cf;padding:1.5rem 1.7rem;margin-bottom:1.2rem}
+.fw-section-title{font-size:10px;letter-spacing:3.5px;color:#E8784A;margin-bottom:1.1rem}
+.fw-agenda{list-style:none}.fw-agenda li{display:flex;gap:12px;padding:0.55rem 0;border-bottom:1px solid #ede3db;font-size:13.5px;color:#6B5A52;line-height:1.6}.fw-agenda li:last-child{border-bottom:none}
+.fw-num{font-family:Georgia,serif;font-size:12px;color:#E8784A;min-width:20px;padding-top:2px}
+.fw-duration{display:flex;align-items:center;gap:8px;margin-top:1rem;padding-top:1rem;border-top:1px solid #ede3db;font-size:12px;color:#A08070}
+.fw-dur-dot{width:5px;height:5px;border-radius:50%;background:#E8784A;opacity:0.6;min-width:5px}
+.fw-for{display:grid;grid-template-columns:1fr 1fr;gap:0.55rem}
+.fw-tag{background:#FFFCFA;border:1px solid #ddd0c8;border-radius:8px;padding:0.5rem 0.75rem;font-size:12.5px;color:#6B5A52;line-height:1.4;display:flex;align-items:flex-start;gap:8px}
+.fw-dot{width:5px;height:5px;min-width:5px;border-radius:50%;background:#E8784A;margin-top:5px}
+.fw-form{background:#FFFCFA;border-radius:12px;border:1px solid #e0d6cf;padding:1.6rem 1.8rem;margin-bottom:1.2rem}
+.fw-field{margin-bottom:1.2rem}.fw-label{display:block;font-size:12px;color:#6B5A52;margin-bottom:6px}
+.req{color:#E8784A;margin-left:2px}.opt{color:#C4B0A4;font-size:11px;margin-left:4px}
+.fw-input{width:100%;border:1px solid #d5c8be;border-radius:8px;padding:10px 14px;font-size:13.5px;color:#3A2E28;background:#FAF6F3;font-family:'Noto Sans TC',sans-serif;outline:none;transition:border-color 0.2s}.fw-input:focus{border-color:#E8784A}
+.fw-sessions{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem}
+.fw-session{border:1px solid #d5c8be;border-radius:10px;padding:0.9rem 1rem;cursor:pointer;background:#FAF6F3;transition:all 0.2s;user-select:none}
+.fw-session:hover{border-color:#E8784A}
+.fw-session.selected{border-color:#E8784A;background:rgba(232,120,74,0.07)}
+.fw-session-date{font-family:Georgia,serif;font-size:15px;color:#3A2E28;margin-bottom:3px;font-weight:400}
+.fw-session.selected .fw-session-date{color:#E8784A}
+.fw-session-time{font-size:11.5px;color:#A08070}
+.fw-submit{width:100%;background:#E8784A;color:white;border:none;border-radius:8px;padding:14px;font-size:14px;font-family:'Noto Sans TC',sans-serif;cursor:pointer;letter-spacing:1px;margin-top:0.5rem;transition:background 0.2s}.fw-submit:hover{background:#d46a3c}.fw-submit:disabled{background:#C4B0A4;cursor:not-allowed}
+.fw-note{font-size:11.5px;color:#A08070;text-align:center;margin-top:0.9rem;line-height:1.8}
+.success-box{display:none;background:#FAF6F3;border:1px solid #E8784A;border-radius:12px;padding:2.4rem;text-align:center;margin-bottom:1.2rem}.success-box.show{display:block}
+.fw-ig-cta{margin-top:1.5rem;padding-top:1.2rem;border-top:1px solid #ede3db;font-size:12.5px;color:#6B5A52;line-height:1.8}
+.fw-ig-link{color:#E8784A;font-weight:500;text-decoration:none}
+.fw-footer{text-align:center;padding:0.5rem 0 1rem}.fw-brand{font-family:Georgia,serif;font-size:11px;color:#C4B0A4;letter-spacing:2px}
+@media(max-width:480px){.fw-for{grid-template-columns:1fr}.fw-sessions{grid-template-columns:1fr}.fw-title{font-size:20px}.fw-header::before{display:none}}
+</style></head><body>
+<div class="fw-wrap">
+
+  <div class="fw-header">
+    <div class="fw-eyebrow">直播免費報名  ·  質穎形象顏究室®</div>
+    <div class="fw-title">衣服很多、但是搭起來就是覺得怪怪</div>
+    <div class="fw-bar"></div>
+    <div class="fw-sub">別再盲忙茫，你需要有人幫你找出那個卡點</div>
+    <div class="fw-meta"><span class="fw-chip-date">5 / 20</span><span class="fw-chip">免費入場</span><span class="fw-chip">直播限定</span></div>
+  </div>
+<div class="fw-section">
+  <div class="fw-section-title">這場直播，我們會聊到</div>
+  <ul class="fw-agenda">
+    <li><span class="fw-num">01</span><span>到底是哪裡出問題才怪怪的</span></li>
+    <li><span class="fw-num">02</span><span>讓你在盲忙茫的癥結點是什麼</span></li>
+    <li><span class="fw-num">03</span><span>你該調整的是什麼</span></li>
+  </ul>
+  <div class="fw-duration"><span class="fw-dur-dot"></span>活動時間約 1 小時  ·  晚上 8:00 開播</div>
+</div>
+<div class="fw-section">
+  <div class="fw-section-title">如果你有這些感覺，這場就是為你準備的</div>
+  <div class="fw-for"><div class="fw-tag"><span class="fw-dot"></span>衣櫃大爆炸，還是覺得穿不好</div>
+      <div class="fw-tag"><span class="fw-dot"></span>一直靠別人推薦，沒有自己的邏輯</div>
+      <div class="fw-tag"><span class="fw-dot"></span>想穿出自己的特色</div>
+      <div class="fw-tag"><span class="fw-dot"></span>服裝搭配單一，覺得自己很沒特色</div>
+      <div class="fw-tag"><span class="fw-dot"></span>不管怎麼穿都少了一個感覺</div>
+      <div class="fw-tag"><span class="fw-dot"></span>學了很多穿搭，卻還是有穿沒有搭</div>
+      <div class="fw-tag"><span class="fw-dot"></span>一直都收藏未曾停止，執行的行動未曾開始</div></div>
+</div>
+<div class="fw-form" id="formBox">
+  <div class="fw-section-title">填寫報名資訊</div>
+  
+  <div class="fw-field">
+    <label class="fw-label">你的稱呼<span class="req">*</span></label>
+    <input class="fw-input" type="text" id="f-name" placeholder="怎麼稱呼你？">
+  </div>
+  <div class="fw-field">
+    <label class="fw-label">Email<span class="req">*</span></label>
+    <input class="fw-input" type="email" id="f-email" placeholder="直播連結將在開播前寄送給你">
+  </div>
+  <div class="fw-field">
+    <label class="fw-label">有什麼想對 Evelyn 說的？<span class="opt">（選填）</span></label>
+    <textarea class="fw-input" id="f-q" rows="3" placeholder="關於穿搭的困擾、對這場直播的期待，或任何想說的都可以" style="resize:none;"></textarea>
+  </div>
+  <button class="fw-submit" id="submitBtn" onclick="submitForm()">確認報名 →</button>
+  <div class="fw-note">直播連結將於開播前透過 Email 傳送給你<br>很期待在直播裡見到你</div>
+</div>
+<div class="success-box" id="successBox">
+  <div style="font-family:Georgia,serif;font-size:22px;color:#3A2E28;margin-bottom:0.8rem;">報名成功 ✓</div>
+  <div style="font-size:13px;color:#A08070;line-height:1.85;">感謝你的報名！<br>Evelyn 會在直播前透過 Email 傳送連結給你，<br>記得留意信箱，很期待見到你呦～<br><br>
+  <span style="font-style:italic;font-family:Georgia;color:#6B5A52;font-size:12.5px;">「分析只是敲門磚——<br>真正的改變，發生在有人陪你走進去的那一段。」</span></div>
+  <div class="fw-ig-cta">對了，如果你還沒追蹤我的 IG，歡迎來找我 ↓<br>
+  <a class="fw-ig-link" href="https://www.instagram.com/go_floralway" target="_blank">@go_floralway</a><br>
+  <span style="font-size:11.5px;color:#A08070;">我會不定期分享穿搭觀念和形象知識，直播之外也可以繼續交流！</span></div>
+</div>
+<div class="fw-footer"><div class="fw-brand">質穎形象顏究室®  ·  Floralway Image Studio</div></div>
+</div>
+<script>
+const SCRIPT_URL="https://script.google.com/macros/s/AKfycbzmQbz4-004X894vE_0k2BIYnkWJ_PD-jM57i6qykbJC1GJyW7G8j-dP94AE0DFrZ-N/exec";
+const SESSION="0520";
+function selectSession(el){
+  document.querySelectorAll('#sessionGroup .fw-session').forEach(s=>s.classList.remove('selected'));
+  el.classList.add('selected');
+}
+function submitForm(){
+  const sessionEl=document.querySelector('#sessionGroup .fw-session.selected');
+  const session=sessionEl?sessionEl.dataset.value:'';
+  const name=document.getElementById('f-name').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const question=document.getElementById('f-q').value.trim();
+  if(document.getElementById('sessionGroup') && !session){alert('請選擇場次 :)');return;}
+  if(!name){alert('請填寫你的稱呼 :)');return;}
+  if(!email||!email.includes('@')){alert('請填寫有效的 Email :)');return;}
+  const btn=document.getElementById('submitBtn');
+  btn.disabled=true;btn.textContent='送出中⋯⋯';
+  const params=new URLSearchParams({session:SESSION,sessions:session||s1Label,name,email,question});
+  fetch(SCRIPT_URL+'?'+params.toString(),{method:'GET',mode:'no-cors'})
+    .then(()=>{document.getElementById('formBox').style.display='none';document.getElementById('successBox').classList.add('show');window.scrollTo({top:0,behavior:'smooth'});})
+    .catch(()=>{alert('送出時發生錯誤，請稍後再試。');btn.disabled=false;btn.textContent='確認報名 →';});
+}
+</script></body></html>
