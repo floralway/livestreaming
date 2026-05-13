@@ -115,7 +115,7 @@ function submitForm(){
   if(!email||!email.includes('@')){alert('請填寫有效的 Email :)');return;}
   const btn=document.getElementById('submitBtn');
   btn.disabled=true;btn.textContent='送出中⋯⋯';
-  const params=new URLSearchParams({session:SESSION,sessions:session||s1Label,name,email,question});
+  const params=new URLSearchParams({session:SESSION,sessions:session||S1LABEL,name,email,question});
   fetch(SCRIPT_URL+'?'+params.toString(),{method:'GET',mode:'no-cors'})
     .then(()=>{document.getElementById('formBox').style.display='none';document.getElementById('successBox').classList.add('show');window.scrollTo({top:0,behavior:'smooth'});})
     .catch(()=>{alert('送出時發生錯誤，請稍後再試。');btn.disabled=false;btn.textContent='確認報名 →';});
