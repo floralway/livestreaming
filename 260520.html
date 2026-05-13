@@ -45,7 +45,7 @@
 
   <div class="fw-header">
     <div class="fw-eyebrow">直播免費報名  ·  質穎形象顏究室®</div>
-    <div class="fw-title">衣服很多、但是搭起來就是覺得怪怪</div>
+    <div class="fw-title">衣服很多、但是搭起來就是覺得怪</div>
     <div class="fw-bar"></div>
     <div class="fw-sub">別再盲忙茫，你需要有人幫你找出那個卡點</div>
     <div class="fw-meta"><span class="fw-chip-date">5 / 20</span><span class="fw-chip">免費入場</span><span class="fw-chip">直播限定</span></div>
@@ -63,9 +63,7 @@
   <div class="fw-section-title">如果你有這些感覺，這場就是為你準備的</div>
   <div class="fw-for"><div class="fw-tag"><span class="fw-dot"></span>以前穿還好，現在怎麼穿都怪</div>
       <div class="fw-tag"><span class="fw-dot"></span>一直靠別人推薦，沒有自己的邏輯</div>
-      <div class="fw-tag"><span class="fw-dot"></span>服裝搭配單一，覺得自己很無趣沒特色</div>
-      <div class="fw-tag"><span class="fw-dot"></span>覺得自己怎麼穿都少了一個感覺</div>
-      <div class="fw-tag"><span class="fw-dot"></span>衣服很多，但是還是不知道怎麼搭</div>
+      <div class="fw-tag"><span class="fw-dot"></span>服裝搭配單一，覺得很無趣沒特色</div>
       <div class="fw-tag"><span class="fw-dot"></span>不管怎麼穿都少了一個感覺</div>
       <div class="fw-tag"><span class="fw-dot"></span>一直都收藏未曾停止，執行的行動未曾開始</div>
       <div class="fw-tag"><span class="fw-dot"></span>學了很多穿搭，卻還是有穿沒有搭</div></div>
@@ -118,34 +116,8 @@ function submitForm(){
   const btn=document.getElementById('submitBtn');
   btn.disabled=true;btn.textContent='送出中⋯⋯';
   const params=new URLSearchParams({session:SESSION,sessions:session||s1Label,name,email,question});
-  // 用 iframe 方式送出，避免 CORS 問題
-  const iframe = document.createElement('iframe');
-  iframe.style.display = 'none';
-  iframe.name = 'hidden_iframe';
-  document.body.appendChild(iframe);
-
-  const form = document.createElement('form');
-  form.method = 'GET';
-  form.action = SCRIPT_URL;
-  form.target = 'hidden_iframe';
-
-  const fields = {session:SESSION, sessions:sessions||S1LABEL, name, email, question};
-  Object.entries(fields).forEach(([k,v]) => {
-    const input = document.createElement('input');
-    input.type = 'hidden';
-    input.name = k;
-    input.value = v;
-    form.appendChild(input);
-  });
-
-  document.body.appendChild(form);
-  form.submit();
-
-  // 不等回應，直接顯示感謝頁
-  setTimeout(() => {
-    document.getElementById('formBox').style.display = 'none';
-    document.getElementById('successBox').classList.add('show');
-    window.scrollTo({top:0,behavior:'smooth'});
-  }, 800);
+  fetch(SCRIPT_URL+'?'+params.toString(),{method:'GET',mode:'no-cors'})
+    .then(()=>{document.getElementById('formBox').style.display='none';document.getElementById('successBox').classList.add('show');window.scrollTo({top:0,behavior:'smooth'});})
+    .catch(()=>{alert('送出時發生錯誤，請稍後再試。');btn.disabled=false;btn.textContent='確認報名 →';});
 }
 </script></body></html>
